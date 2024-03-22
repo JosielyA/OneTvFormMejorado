@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+@layer components {
+  .personalInfoInput {
+    @apply xl:w-4/12 md:w-6/12  w-10/12 mb-1 py-1 px-3 border-turquesa border-b-4 border-x-[1px] rounded-lg font-semibold  text-turquesa placeholder-turquesa;
+  }
+  .tituloInput {
+    @apply w-full py-1 px-3 border-turquesa border-b-4 border-x-[1px] my-2 rounded-lg bg-grisOscuro placeholder-turquesa font-semibold;
+  }
+  .fileInput {
+    @apply p-4 w-full mt-1 border-turquesa border-2 border-dashed mb-2 rounded-md bg-grisClaro;
+  }
+  .descripcionInput {
+    @apply w-full mt-1 h-[100px] py-1 px-3 border-turquesa border-b-4 border-x-[1px] mb-2 rounded-lg bg-grisOscuro placeholder-turquesa font-semibold;
+  }
+  .personalInfoInputLabelContainer {
+    @apply xl:w-4/12 md:w-6/12  w-10/12;
+  }
+  .personalInfoInputLabel {
+    @apply text-black font-semibold;
+  }
+  .addPedidoButton {
+    @apply flex items-center border bg-celeste text-black rounded-sm font-bold uppercase p-2 mx-2 disabled:opacity-50;
+  }
+}
