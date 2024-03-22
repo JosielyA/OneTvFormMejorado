@@ -40,23 +40,6 @@ function algo() {
           placeholder="Descripción"
           required
         />
-        <div className="w-full">
-          <label
-            className="text-black font-semibold "
-            htmlFor={`imagenes_${i}`}
-          >
-            Imagenes
-          </label>
-        </div>
-        <input
-          className="p-4 w-full mt-1 border-turquesa border-2 border-dashed mb-2 rounded-md bg-grisClaro"
-          type="file"
-          name={`imagenes_${i}`}
-          multiple
-          onChange={(ev) => {
-            handleImages(ev, i);
-          }}
-        />
       </div>
     </div>
   );

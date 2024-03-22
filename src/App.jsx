@@ -10,7 +10,8 @@ const defaultState = {
 
 function FileRow({ onChange, files }) {
   return (
-    <div>
+    <div className="w-full">
+      <label className="personalInfoInputLabel">Imagenes</label>
       <input
         className="fileInput"
         type="file"
@@ -28,13 +29,19 @@ function FileRow({ onChange, files }) {
 
 function Row({ onChange, onRemove, titulo, descripcion, files }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col  items-center bg-grisOscuro p-4 mb-4 rounded-lg">
+      <div className="w-full">
+        <label className="personalInfoInputLabel">Título</label>
+      </div>
       <input
         className="tituloInput"
         value={titulo}
         onChange={(e) => onChange("titulo", e.target.value)}
         placeholder="Titulo"
       />
+      <div className="w-full">
+        <label className="personalInfoInputLabel">Descripción</label>
+      </div>
       <textarea
         className="descripcionInput"
         placeholder="Descripcion"
@@ -90,6 +97,9 @@ export default function App() {
 
   return (
     <div className="App">
+      <div className="flex place-content-center m-10 mb-4">
+        <img src={OneTvLogo} className="w-[250px]" />
+      </div>
       <div>
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center p-3">
@@ -158,12 +168,18 @@ export default function App() {
       <div className="flex flex-col items-center">
         <div className="p-4 xl:w-4/12 md:w-6/12  w-10/12">
           {rows.map((row, index) => (
-            <Row
-              {...row}
-              onChange={(name, value) => handleOnChange(index, name, value)}
-              onRemove={() => handleOnRemove(index)}
-              key={index}
-            />
+            <div key={index}>
+              <div className="w-full">
+                <h2 className="font-medium text-xl text-turquesa">
+                  Pedido #{index + 1}
+                </h2>
+              </div>
+              <Row
+                {...row}
+                onChange={(name, value) => handleOnChange(index, name, value)}
+                onRemove={() => handleOnRemove(index)}
+              />
+            </div>
           ))}
         </div>
       </div>
