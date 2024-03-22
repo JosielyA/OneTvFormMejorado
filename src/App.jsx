@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import OneTvLogo from "./assets/one_tv_logo.png";
 import { FaPlus } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const defaultState = {
   titulo: "",
@@ -49,7 +50,12 @@ function Row({ onChange, onRemove, titulo, descripcion, files }) {
         onChange={(e) => onChange("descripcion", e.target.value)}
       />
       <FileRow onChange={onChange} files={files} />
-      <button onClick={onRemove}>Eliminar</button>
+      <div className="flex w-full place-content-end items-center p-2 mt-1">
+        <button onClick={onRemove} className="eliminarButton">
+          <FaTrash className="mr-2" />
+          <span>Eliminar</span>
+        </button>
+      </div>
     </div>
   );
 }
@@ -184,7 +190,14 @@ export default function App() {
         </div>
       </div>
 
-      <button onClick={handleSubmit}>Enviar</button>
+      <div className="flex place-content-center">
+        <button
+          className="bg-celeste text-black font-bold text-2xl py-2 px-16 rounded-sm mx-2 disabled:opacity-50"
+          onClick={handleSubmit}
+        >
+          Enviar
+        </button>
+      </div>
     </div>
   );
 }

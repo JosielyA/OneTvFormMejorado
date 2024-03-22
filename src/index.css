@@ -30,4 +30,7 @@
   .addPedidoButton {
     @apply flex items-center border bg-celeste text-black rounded-sm font-bold uppercase p-2 mx-2 disabled:opacity-50;
   }
+  .eliminarButton {
+    @apply flex items-center bg-red-500 text-black rounded-sm font-medium text-lg uppercase p-[8px] disabled:opacity-50;
+  }
 }
